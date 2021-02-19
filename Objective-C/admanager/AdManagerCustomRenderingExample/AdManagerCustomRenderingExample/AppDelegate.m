@@ -1,6 +1,7 @@
 //  Copyright (c) 2015 Google. All rights reserved.
 
 #import "AppDelegate.h"
+@import GoogleMobileAds;
 #import <GoogleMobileAds/GoogleMobileAds.h>
 
 @implementation AppDelegate
@@ -11,6 +12,7 @@
 
   // Initialize Google Mobile Ads SDK
   [GADMobileAds.sharedInstance startWithCompletionHandler:nil];
+  GADMobileAds.sharedInstance.requestConfiguration.testDeviceIdentifiers = @[ kGADSimulatorID ];
   return YES;
 }
 
